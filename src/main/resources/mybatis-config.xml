@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 使用jdbc的getGenerateKeys来获取自增的主键值，设置为true后则jdbc会自动调用api去获取该值 -->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 使用列别名替换列名 -->
+        <setting name="useColumnLabel" value="true"/>
+        <!-- 使用驼峰 Table(table_name)->Entity(tableName)-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+</configuration>
