@@ -12,7 +12,7 @@ import javax.annotation.Resource;
  * Created by yp on 2017/4/19.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({"classpath:spring/spring-config.xml"})
+@ContextConfiguration({"classpath:spring/spring-Dao.xml"})
 public class SuccessSeckillDaoTest {
     @Resource
     SuccessSeckillDao successSeckillDao;

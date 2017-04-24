@@ -9,6 +9,7 @@ import java.util.Date;
  * 不要添加constructor，可能报错
  */
 public class Seckill {
+
     private long seckillId;
 
     private String name;
