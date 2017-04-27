@@ -31,10 +31,12 @@
       <artifactId>logback-classic</artifactId>
       <version>1.1.1</version>
     </dependency>
+
+    <!-- 加载驱动包时要注意数据库和驱动包的版本对应问题，防止出现REPEATABLE-READ的错误 -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.31</version>
+      <version>5.1.39</version>
     </dependency>
     <dependency>
       <groupId>c3p0</groupId>

@@ -6,8 +6,8 @@
 
     <insert id="insertSuccessKilled">
         <!-- ignore是产生错误不插入返回-1 -->
-        insert ignore INTO success_killed(seckill_id, user_phone)
-        VALUES (#{seckillId}, #{userPhone});
+        insert ignore INTO success_killed(seckill_id, user_phone, state)
+        VALUES (#{seckillId}, #{userPhone}, 0);
     </insert>
 
     <select id="queryByIdWithSeckill" resultType="SuccessKilled">

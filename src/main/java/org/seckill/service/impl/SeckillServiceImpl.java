@@ -41,7 +41,7 @@ public class SeckillServiceImpl implements SeckillService{
     private String slat = "qworibufaiyhwiyr659h53498h";
 
     public List<Seckill> getSeckillList() {
-        return seckillDao.queryAll(0,1);
+        return seckillDao.queryAll(0,4);
     }
 
     public Seckill getById(long seckillId) {
@@ -50,7 +50,7 @@ public class SeckillServiceImpl implements SeckillService{
 
     public Exposer exportSeckillUrl(long seckillId) {
         Seckill seckill = seckillDao.queryById(seckillId);
-        System.out.println(getMD5(seckillId));
+        //System.out.println(seckillId+"/"+getMD5(seckillId));
         Exposer exposer = new Exposer();
         if(seckill == null){
             return new Exposer(false, seckillId);
@@ -89,7 +89,8 @@ public class SeckillServiceImpl implements SeckillService{
     public SeckillExcution excuteSeckill(long seckillId, long userPhone, String md5) throws SeckillException,
             RepeatKillException, SeckillCloseException {
         //判断用户的请求md5是否有误
-        if(md5 == null || !md5.equals(getMD5(seckillId))){
+        //System.out.println(seckillId+"/"+md5+"\n"+ getMD5(seckillId)+"\n"+md5.equals(getMD5(seckillId)));
+        if(md5 == null || !(md5.equals(getMD5(seckillId)))){
             throw new SeckillException("执行操作的连接有误");
         }
 
@@ -98,7 +99,7 @@ public class SeckillServiceImpl implements SeckillService{
         //操作数据库时可能出现异常
         try {
             int updateCount = seckillDao.reduceNumber(seckillId, nowTime);
-            System.out.println(updateCount);
+            //System.out.println(updateCount);
             if (updateCount <= 0) {
                 //库存为零/秒杀结束，时间已过
                 throw new SeckillCloseException("秒杀失败，秒杀结束");

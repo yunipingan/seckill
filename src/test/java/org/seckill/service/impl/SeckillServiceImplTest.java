@@ -64,7 +64,7 @@ public class SeckillServiceImplTest {
     //集成测试代码完成逻辑：是否开启秒杀的整个过程
     @Test
     public void seckillLogic(){
-        long seckillId = 1000L;
+        long seckillId = 1001L;
         Exposer exposer = seckillService.exportSeckillUrl(seckillId);
         if(exposer.isExposed()){
             long phone = 15112174514L;

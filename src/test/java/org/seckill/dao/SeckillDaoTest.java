@@ -26,7 +26,7 @@ public class SeckillDaoTest {
 
     @Test
     public void testReduceNumber(){
-        seckillDao.reduceNumber(1005L, new Date());
+        seckillDao.reduceNumber(1001L, new Date());
     }
 
     @Test
