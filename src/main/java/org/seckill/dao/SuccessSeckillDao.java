@@ -11,7 +11,7 @@ public interface SuccessSeckillDao {
      * 插入秒杀记录
      * @param seckillId
      * @param userPhone
-     * @return 返回的是影响函数，返回的是0则表示不成功
+     * @return 返回的是影响函数，返·回的是0则表示不成功
      */
     int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 

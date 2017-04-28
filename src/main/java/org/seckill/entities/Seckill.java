@@ -1,5 +1,6 @@
 package org.seckill.entities;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.Date;
  * Created by yp on 2017/3/29.
  * 不要添加constructor，可能报错
  */
-public class Seckill {
+public class Seckill implements Serializable {
 
     private long seckillId;
 

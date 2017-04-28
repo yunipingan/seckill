@@ -36,12 +36,21 @@ public interface SeckillService {
     Exposer exportSeckillUrl(long seckillId);
 
     /**
-     *
+     * 执行秒杀操作
      * @param seckillId
      * @param userPhone
      * @param md5
      */
     SeckillExcution excuteSeckill(long seckillId, long userPhone, String md5)
+            throws SeckillException, RepeatKillException, SeckillCloseException;
+
+    /**
+     * 执行秒杀操作 by数据存储过程
+     * @param seckillId
+     * @param userPhone
+     * @param md5
+     */
+    SeckillExcution excuteSeckillProcedure(long seckillId, long userPhone, String md5)
             throws SeckillException, RepeatKillException, SeckillCloseException;
 
 }
